@@ -1,36 +1,39 @@
 <div id="todoapp" ng-app ng-controller="TodoCtrl">
 
-    <div id="create-todo"
-      <form>
-        <input type="text" ng-model="newTodo" id="new-todo"/>
-        <a href = "#" id='hidden_click' ng-click="addTodo(newTodo)" ></a>
-      </form>
-    </div>
+  <div id="create-todo"
+    <form>
+      <input type="text" ng-model="newTodo" id="new-todo"/>
+      <a href = "#" id='hidden_click' ng-click="addTodo(newTodo)" ></a>
+    </form>
+  </div>
 
-    <div id="main">
-      <ul id="todo-list" name="todo-list">
-        <li ng-repeat="todo in todos | orderBy:sortMethod">          
-          <div class='todo' name='todo'>
-            <input id="toggle" type="checkbox" ng-model="todo.done" ng-click="toggleTodo()"/>
-            <div class="title done-{{todo.done}}" ng:hide="editorEnabled" ng:click="enableEditor()">{{todo.content}}</div> <a class="destroy" ng-click="destroyTodo()"></a>
-            
-            <span ng:show="editorEnabled">
-              <input type="text" size="30" ng:required ng-model="todo.content"/>        
-              <button ng:click="save()">Ok</button>
-              <button ng:click="disableEditor()">Cancel</button>
-            </span>
-         
-          </div>        
-        </li>
-      </ul>
-    </div>
-
-    <div>
-      <button ng-click="clearFinishedTodos()">Clear Finished Todos</button>
-    </div>
+  <div id="main">
+    <ul id="todo-list" name="todo-list">
+      <li ng-repeat="todo in todos | orderBy:sortMethod | filter:{done:filterCondition}">          
+        <div class='todo' name='todo'>
+          <input id="toggle" type="checkbox" ng-model="todo.done" ng-click="toggleTodo()"/>
+          <div class="title done-{{todo.done}}" ng:hide="editorEnabled" ng:click="enableEditor()">{{todo.content}}</div> <a class="destroy" ng-click="destroyTodo()"></a>
+          
+          <span ng:show="editorEnabled">
+            <input type="text" size="30" ng:required ng-model="todo.content"/>        
+            <button ng:click="save()">Ok</button>
+            <button ng:click="disableEditor()">Cancel</button>
+          </span>
+       
+        </div>        
+      </li>
+    </ul>
+  </div>
 
   <div id='footer'>
   	<ul id="todo-stats">
+      <div class='stats'>
+        <a class='itemleft' href='#'>Items left({{remaining()}})</a>
+        <a class='filter all' href='#' ng-click="filterAll()">All</a>
+        <a class='filter active' href='#' ng-click="filterFalse()">Active</a>
+        <a class='filter completed' href='#' ng-click="filterTrue()">Completed</a>
+        <a id='clearcompleted' href='#' ng-click="clearCompleted()">Clear completed({{completed()}})</a>
+      </div>
 	  </ul>
   </div>
 </div>
