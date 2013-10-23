@@ -1,0 +1,154 @@
+body {
+  background-color: #f7f7f7;
+  font-family: helvetica,sans-serif;
+  line-height: 1.4em;
+  color: #333;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+#todoapp {
+  margin: 0 auto 40px;
+  background-color: white;
+  width: 800px;
+  min-height: 600px;
+  padding: 10px;
+}
+
+#title h1 {
+  text-align: center;
+}
+
+#todo-list li {
+  padding: 12px 20px 11px 0;
+  position: relative;
+  font-size: 24px;
+  line-height: 1.1em;
+  border-bottom: 1px solid #CCC;
+}
+
+#todo-list #toggle {
+  position: relative;
+  top: 9px;
+  margin: 0 10px 0 7px;
+  float: left;
+}
+
+input.title_edit {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  font-size: 24px;
+  font-family: inherit;
+  line-height: 1.4em;
+  border: 0;
+  outline: none;
+  color: inherit;
+  padding: 6px;
+  border: 1px solid #999;
+}
+
+#create-todo {
+  position: relative;
+  margin-left: 60px;
+}
+
+#create-todo input {
+  width: 666px;
+  font-size: 24px;
+  font-family: inherit;
+  line-height: 1.4em;
+  border: 0;
+  outline: none;
+  padding: 6px;
+  border: 1px solid #999;
+}
+
+.todo .destroy {
+  position: absolute;
+  right: 10px;
+  top: 16px;
+  display: none;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background: url(/assets/destroy.png) no-repeat center center;
+}
+
+
+#hidden_click {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background: url(/assets/go.png) no-repeat center center;
+}
+
+.todo:hover .destroy {
+  display: block;
+}
+
+
+#clearcompleted {
+  float: right;
+  position: relative;
+  line-height: 20px;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 11px;
+  padding: 0 10px;
+  border-radius: 3px;
+  box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.itemleft {
+  float: left;
+  position: relative;
+  line-height: 20px;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 0 10px;
+}
+
+.filter {
+  float: center;
+  position: relative;
+  line-height: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 11px;
+  padding: 0 10px;
+  border-radius: 3px;
+  box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+#footer #log {
+  top: 35px; 
+  position: relative;
+  font-size: 14px;
+  padding: 12px 20px 11px 0;
+  left: -75px;
+}
+
+
+table#table_log {
+   border-color: #AAABAC;
+   border-style: solid;
+   width: 100%;
+   font-size: 14px;
+  }
+
+
+
+
