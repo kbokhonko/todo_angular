@@ -9,7 +9,7 @@
 
   <div id="main">
     <ul id="todo-list" name="todo-list">
-      <li ng-repeat="todo in todos | orderBy:sortMethod | filter:{done:filterCondition}">          
+      <li ng-repeat="todo in todos | orderBy:sortMethod | todoFilter:criteria">          
         <div class='todo' name='todo'>
           <input id="toggle" type="checkbox" ng-model="todo.done" ng-click="toggleTodo()"/>
           <div class="title done-{{todo.done}}" ng:hide="editorEnabled" ng:click="enableEditor()">{{todo.content}}</div> <a class="destroy" ng-click="destroyTodo()"></a>

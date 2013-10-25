@@ -1,6 +1,6 @@
 var app;
 
-app = angular.module("Todo", ["ngResource"]);
+app = angular.module("Todo", ["ngResource", 'Todo.filters']);
 
 this.TodoCtrl = function($scope, $resource) {
   var Todo;
@@ -16,6 +16,8 @@ this.TodoCtrl = function($scope, $resource) {
 	    });
     return remaining;
   };
+
+  $scope.criteria = undefined;
 
   $scope.completed = function() {
     completed = $scope.todos.length;
@@ -43,7 +45,7 @@ this.TodoCtrl = function($scope, $resource) {
 	  $scope.newTodo = "";
 	};
 
-	$scope.toggleTodo = function() {
+  $scope.toggleTodo = function() {
 	  this.todo.$update();
 	};
 
@@ -74,15 +76,15 @@ this.TodoCtrl = function($scope, $resource) {
   };
 
   $scope.filterTrue = function() {
-    $scope.filterCondition = true;
+    $scope.criteria = true;
   };
 
   $scope.filterAll = function() {
-    $scope.filterCondition = false || true;
+    $scope.criteria = undefined;
   };
 
   $scope.filterFalse = function() {
-    $scope.filterCondition = false;
+    $scope.criteria = false;
   };
 };
 
